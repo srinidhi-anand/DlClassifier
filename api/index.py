@@ -3,6 +3,8 @@ import base64
 import os
 from typing import Annotated
 
+import uvicorn
+
 from api.schemas import FoodNote
 
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -127,3 +129,6 @@ def main(body: Annotated[FoodNote, Form()]):
             return {'prediction': f"{str(predVal)}%", 'label': 'unknown' }
     except HTTPException as e:
         raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
+    
+if __name__ == "__main__":
+    uvicorn.run("app.api:app", host="0.0.0.0", port=3000, reload=True)
