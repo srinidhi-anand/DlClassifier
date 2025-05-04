@@ -1,12 +1,6 @@
 {
     "devCommand": "uvicorn backend.app:app --host 0.0.0.0 --port 8000 && npm run dev --prefix frontend",
     "version": 2,
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/backend/app"
-        }
-    ],
     "builds": [
       {
         "src": "backend/app.py",
