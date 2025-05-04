@@ -7,7 +7,7 @@
         },
         {
           "source": "/(.*)",
-          "destination": "/app/index.html"
+          "destination": "/index.html"
         }
     ]
   }
