@@ -17,15 +17,15 @@
         }
       }
     ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "backend/main.py"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "frontend/build/index.html"
-      }
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/backend/main"
+        },
+        {
+          "src": "/(.*)",
+          "dest": "frontend/build/index.html"
+        }
     ],
     "buildCommand": "npm run build --prefix frontend",
     "installCommand": "pip install -r backend/requirements.txt && npm install --prefix frontend"
