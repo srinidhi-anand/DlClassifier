@@ -3,7 +3,7 @@ import base64
 import os
 from typing import Annotated
 
-from schemas import FoodNote
+from backend.schemas import FoodNote
 
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import tensorflow as tf
