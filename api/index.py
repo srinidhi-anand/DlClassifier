@@ -130,5 +130,9 @@ def main(body: Annotated[FoodNote, Form()]):
     except HTTPException as e:
         raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
     
+@app.get("/")
+async def root():
+    return {"message": "Hello from FastAPI!"}
+
 if __name__ == "__main__":
-    uvicorn.run("app.api:app", host="0.0.0.0", port=3000, reload=True)
+    uvicorn.run("api.index:app", host="0.0.0.0", port=8000, reload=True)
