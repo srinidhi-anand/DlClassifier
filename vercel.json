@@ -1,5 +1,4 @@
 {
-    "devCommand": "uvicorn backend.main:app --host 0.0.0.0 --port 8000 && npm run dev --prefix frontend",
     "version": 2,
     "builds": [
       {
@@ -26,7 +25,5 @@
           "source": "/(.*)",
           "destination": "frontend/build/index.html"
         }
-    ],
-    "buildCommand": "npm run build --prefix frontend",
-    "installCommand": "pip install -r backend/requirements.txt && npm install --prefix frontend"
+    ]
   }
