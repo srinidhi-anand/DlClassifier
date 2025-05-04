@@ -3,6 +3,7 @@ import base64
 import os
 from typing import Annotated
 
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 from api.schemas import FoodNote
@@ -23,7 +24,7 @@ IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 origins = [
     "*"
 ]
@@ -52,7 +53,7 @@ def predict_image(img_path,classifier):
     res = classifier.predict(img)
     print(f"imagepredicted {res}")
     classesList = []
-    with open('assets/classes.json', 'r') as file:
+    with open('static/classes.json', 'r') as file:
         classesList = json.load(file)
     print(f"classesList {classesList}")
     res = sorted (
@@ -102,13 +103,13 @@ def main(body: Annotated[FoodNote, Form()]):
         contents = body.fileData.file.read()
         # Process the file content
         print(f"Uploaded file: {contents} {body.fileData.filename}")
-        model = tf.keras.models.load_model('assets/model.h5')
+        model = tf.keras.models.load_model('static/model.h5')
         print('from load saved!')
         # print(model.summary())
-        # # tfjs.converters.save_keras_model(model, 'assets/tfjs_model')
-        classifier = model # tf.keras.models.load_model('assets/tfjs_model/model.json')
+        # # tfjs.converters.save_keras_model(model, 'static/tfjs_model')
+        classifier = model # tf.keras.models.load_model('static/tfjs_model/model.json')
         # img_data = image_url_to_base64(data.base64str)
-        img_path = f"assets/{body.name}"
+        img_path = f"static/{body.name}"
         with open(img_path, "wb") as fh:
             # fh.write(data.base64str.decode('base64'))
             # fh.write(base64.urlsafe_b64decode(contents))
