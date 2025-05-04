@@ -1,9 +1,9 @@
 {
-    "devCommand": "uvicorn backend.app:app --host 0.0.0.0 --port 8000 && npm run dev --prefix frontend",
+    "devCommand": "uvicorn backend.main:app --host 0.0.0.0 --port 8000 && npm run dev --prefix frontend",
     "version": 2,
     "builds": [
       {
-        "src": "backend/app.py",
+        "src": "backend/main.py",
         "use": "@vercel/python",
         "config": {
           "maxLambdaSize": "15mb"
@@ -20,7 +20,7 @@
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "backend/app.py"
+        "dest": "backend/main.py"
       },
       {
         "src": "/(.*)",
