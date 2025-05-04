@@ -23,8 +23,8 @@
             "destination": "/backend/main"
         },
         {
-          "src": "/(.*)",
-          "dest": "frontend/build/index.html"
+          "source": "/(.*)",
+          "destination": "frontend/build/index.html"
         }
     ],
     "buildCommand": "npm run build --prefix frontend",
