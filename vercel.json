@@ -1,5 +1,5 @@
 {
-    "devCommand": "uvicorn backend.app:app --host 0.0.0.0 --port 8000",
+    "devCommand": "uvicorn backend.app:app --host 0.0.0.0 --port 8000 && npm install --prefix frontend && npm run build --prefix frontend",
     "version": 2,
     "builds": [
       {
@@ -13,7 +13,7 @@
         "src": "frontend",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "dist"
+          "distDir": "build"
         }
       }
     ],
@@ -24,7 +24,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "frontend/dist/index.html"
+        "dest": "frontend/build/index.html"
       }
     ]
   }
