@@ -4,6 +4,7 @@ import "./App.css";
 import { Uploader } from 'rsuite';
 import 'rsuite/Uploader/styles/index.css';
 import { useEffect, useState } from "react";
+import React from "react";
 
 
 function Upload() {

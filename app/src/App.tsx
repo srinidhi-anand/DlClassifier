@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home';
 import Upload from './Upload';
 import Predict from './Predict';
+import React from 'react';
 
 function App() {
   return (
