@@ -1,18 +1,13 @@
 
-import base64
 import os
 from typing import Annotated
 
 from fastapi.staticfiles import StaticFiles
 import uvicorn
-
 from api.schemas import FoodNote
-
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import tensorflow as tf
-import requests
-# import tensorflowjs as tfjs
-from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 # import base64
