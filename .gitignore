@@ -199,3 +199,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.exe
+*.dist-info
+*.h
+*.dat
+*.whl
+*.hpp
+*.inc
+
+
+
+
+
