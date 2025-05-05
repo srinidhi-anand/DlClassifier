@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d4bd126e16dffe0248eb9a59593f206b8e6a252e419a6510387947afe2c38e9c"
+            "sha256": "83b7921004e10fc5bb1a5f72205325c3beccb7bf84b91bb2f0a8e54fdec440ae"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1286,28 +1286,6 @@
             "markers": "python_version >= '3.9'",
             "version": "==2.18.0"
         },
-        "tensorflow-cloud": {
-            "hashes": [
-                "sha256:a6428b22c8f96427f15b7f56b83bf5fabda62162561e8154971315b040cd7276"
-            ],
-            "index": "pypi",
-            "version": "==0.1.5"
-        },
-        "tensorflow-estimator": {
-            "hashes": [
-                "sha256:aedf21eec7fb2dc91150fc91a1ce12bc44dbb72278a08b58e79ff87c9e28f153"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.7'",
-            "version": "==2.15.0"
-        },
-        "tensorflow-hub": {
-            "hashes": [
-                "sha256:e10c184b3d08daeafada11ffea2dd46781725b6bef01fad1f74d6634ad05311f"
-            ],
-            "index": "pypi",
-            "version": "==0.16.1"
-        },
         "tensorflow-intel": {
             "hashes": [
                 "sha256:34701c988f3e20415a8e450a1384339e9f013950db70fa0361b79cddd1e8431b",
@@ -1342,14 +1320,6 @@
             ],
             "markers": "python_version < '3.12' and python_version >= '3.7'",
             "version": "==0.31.0"
-        },
-        "tensorflow-probability": {
-            "hashes": [
-                "sha256:f3f4d6431656c0122906888afe1b67b4400e82bd7f254b45b92e6c5b84ea8e3e"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.9'",
-            "version": "==0.25.0"
         },
         "termcolor": {
             "hashes": [
