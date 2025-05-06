@@ -9,11 +9,25 @@
 }
 
 .logo {
-  height: 25em;
+  height: 50rem;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
   margin: auto;
+  width: 70%;
+}
+
+.home_screen {
+  align-items: anchor-center;
+  font-size: large;
+}
+
+.pl-0 {
+  padding-left: 0% !important;
+}
+
+.leading-2{
+  line-height: 2;
 }
 
 @keyframes logo-spin {
@@ -67,11 +81,15 @@
 }
 
 .back {
-  margin-top: 17px;
+  margin-top: -150px;
   margin-right: 12px;
   position:absolute;
   top:0;
   right:0;
+}
+
+.back.predict {
+  margin-top: -85px !important;
 }
 
 .resultimg {

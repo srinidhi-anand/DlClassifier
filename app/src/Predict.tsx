@@ -14,7 +14,7 @@ function Predict() {
                     <>
                     <button
                         role="button"
-                        className="button-34 back btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                        className="predict button-34 back btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                         onClick={() => { localStorage.removeItem('file'); localStorage.removeItem('response'); window.location.href = "/" }}
                     > Home </button>
                     <div className="card">

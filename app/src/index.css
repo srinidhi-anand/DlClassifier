@@ -30,11 +30,35 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative; 
+}
+
+body::after {
+  background-image:url(https://img.freepik.com/premium-vector/ai-logo-template-vector-with-white-background_1023984-15078.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  content: ""; /* Create a pseudo-element */
+  position: absolute; /* Position the pseudo-element absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.06;
+}
+
+div#root {
+  position: relative; /* Make the child element position: relative */
+  z-index: 1;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2, h3 {
+  font-family: "Times New Roman", Times, serif;
 }
 
 button {
