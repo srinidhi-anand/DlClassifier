@@ -58,7 +58,7 @@ function Upload() {
         <button
             role="button"
             className="button-34 back btn btn-success pull-right absolute btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() => { window.location.href = "/"; }}>
+            onClick={() => { window.location.href = "/home"; }}>
             Back
         </button>
         <div className="card">
