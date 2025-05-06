@@ -15,7 +15,7 @@ function Predict() {
                     <button
                         role="button"
                         className="button-34 back btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                        onClick={() => { localStorage.removeItem('file'); localStorage.removeItem('response'); window.location.href = "/home" }}
+                        onClick={() => { localStorage.removeItem('file'); localStorage.removeItem('response'); window.location.href = "/" }}
                     > Home </button>
                     <div className="card">
                         <h1 id={type} className="h1title">Results are ready </h1>
@@ -26,7 +26,7 @@ function Predict() {
                         <img src={objectUrl} className="resultimg"/>  
                     </div>
                     </> :
-                    <> Results are cleared or not available, please start proceeding from the <a href="/home">Home screen </a> </>}
+                    <> Results are cleared or not available, please start proceeding from the <a href="/">Home screen </a> </>}
         </>
     );
 }
