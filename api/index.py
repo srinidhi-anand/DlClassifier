@@ -129,8 +129,8 @@ app.add_middleware(
 async def root():
     try:
         classesList = []
-        # with open('../classes.json', 'r') as file:
-        #     classesList = json.load(file)
+        with open('../classes.json', 'r') as file:
+            classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
     except HTTPException as e: 
