@@ -12,7 +12,6 @@ function Upload() {
     const [isLoading, setIsLoading] = useState(false);
     const [disabled, setDisabled] = useState(false);
     useEffect(( ) => {
-        console.log(isLoading);
         setDisabled(isLoading);
     }, [isLoading]);
     const navigate = useNavigate();
@@ -20,12 +19,11 @@ function Upload() {
         const file = files.blobFile;
         const formData = new FormData();
         setIsLoading(true);
-        console.log('file ', file.name, file.type, );
+
         formData.append('name', file.name)
         formData.append('type', file.type)
-        formData.append('fileData', file); // 'file_upload' should match the FastAPI parameter name
-        console.log('formData ', formData);
-        
+        formData.append('fileData', file);
+
         try {
           const response = await fetch('https://tf-keras-model.onrender.com/predict', {
             method: 'POST',
@@ -33,7 +31,6 @@ function Upload() {
           });
           if (response.ok) {
             const jsonBody = await response.json();
-            console.log('File uploaded successfully!', jsonBody);
             localStorage.setItem('file', JSON.stringify({ name: file.name, type: file.type, data: URL.createObjectURL(file)}))
             localStorage.setItem('response', JSON.stringify({status: response.status, body: jsonBody,}))
             handleUploadSuccess()

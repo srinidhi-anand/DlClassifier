@@ -7,7 +7,7 @@ function Predict() {
     const { data: objectUrl = null, name = 'untitled image', type = '' } = fileResponse ? JSON.parse(fileResponse) : {};
     const response = localStorage.getItem('response');
     const { status = null, body = null } = response ? JSON.parse(response) : {};
-    console.log(fileResponse, response);
+
     return (
         <>
             {   fileResponse !== null && fileResponse ? 
