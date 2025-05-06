@@ -129,7 +129,7 @@ app.add_middleware(
 async def root():
     try:
         env = os.environ.get('VERCEL_ENV', 'preview')
-        path = os.path.join(os.getcwd(), 'static', 'classes.json')
+        path = os.path.join(os.getcwd(), 'public', 'classes.json')
         if (env == 'production'):
             path = os.path.join(os.getcwd(), 'public', 'classes.json')
         print('process', env, path)
