@@ -7,7 +7,7 @@ import uvicorn
 from api.schemas import FoodNote
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 # import tensorflow as tf
-os.environ["KERAS_BACKEND"] = "tensorflow"
+os.environ["KERAS_BACKEND"] = "torch"
 import keras
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
