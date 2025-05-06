@@ -124,12 +124,12 @@ app.add_middleware(
 #             return {'prediction': f"{str(predVal)}%", 'label': 'unknown' }
 #     except HTTPException as e:
 #         raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
-    
+
 @app.get("/home")
 async def root():
     try:
         classesList = []
-        with open('../public/classes.json', 'r') as file:
+        with open('classes.json', 'r') as file:
             classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
