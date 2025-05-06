@@ -2,11 +2,19 @@
     "version": 2,
     "rewrites": [
         {
-            "source": "/api/root",
+            "source": "/api/(.*)",
             "destination": "/api/index.py"
         },
         {
-          "source": "/(.*)",
+          "source": "/",
+          "destination": "/index.html"
+        },
+        {
+          "source": "/Upload",
+          "destination": "/index.html"
+        },
+        {
+          "source": "/Predict",
           "destination": "/index.html"
         }
     ],
