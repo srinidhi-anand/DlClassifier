@@ -125,16 +125,16 @@ app.add_middleware(
 #     except HTTPException as e:
 #         raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
 
-@app.get("/home")
+@app.get("/root")
 async def root():
     try:
         classesList = []
-        with open('../classes.json', 'r') as file:
-            classesList = json.load(file)
+        # with open('../classes.json', 'r') as file:
+        #     classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
-    except Exception as e: 
-        raise Exception(status_code = e.status_code, detail=f'error occurred {e}')
+    except HTTPException as e: 
+        raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
 
 if __name__ == "__main__":
     uvicorn.run("index:app", host="0.0.0.0", port=8000, reload=True)
