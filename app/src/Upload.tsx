@@ -27,7 +27,7 @@ function Upload() {
         console.log('formData ', formData);
         
         try {
-          const response = await fetch('/api/predict', {
+          const response = await fetch('https://tf-keras-model.onrender.com/predict', {
             method: 'POST',
             body: formData,
           });
