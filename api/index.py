@@ -19,7 +19,7 @@ IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 origins = [
     "*"
 ]
