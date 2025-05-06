@@ -139,7 +139,7 @@ async def root():
         with open(path, 'r') as file:
             classesList = json.load(file)
         print(f"classesList {classesList}")
-        return {"message": "Hello from FastAPI!", "classesList": classesList}
+        return {"message": "Hello from FastAPI!", "classesList": len(classesList)}
     except Exception as e: 
         return f'error occurred {e} {traceback.format_exc()}'
 
