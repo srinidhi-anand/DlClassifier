@@ -19,7 +19,6 @@ IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
 origins = [
     "*"
 ]
@@ -128,7 +127,11 @@ app.add_middleware(
     
 @app.get("/home")
 async def root():
-    return {"message": "Hello from FastAPI!"}
+    classesList = []
+    with open('../public/classes.json', 'r') as file:
+        classesList = json.load(file)
+    print(f"classesList {classesList}")
+    return {"message": "Hello from FastAPI!", "classesList": classesList}
 
 if __name__ == "__main__":
     uvicorn.run("index:app", host="0.0.0.0", port=8000, reload=True)
