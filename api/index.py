@@ -14,12 +14,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from numpy import expand_dims, squeeze
 import json
 
-TF_ENABLE_ONEDNN_OPTS=0
+os.environ["TF_ENABLE_ONEDNN_OPTS"]="0"
 IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
 app = FastAPI()
-# app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 origins = [
     "*"
 ]
@@ -131,4 +131,4 @@ async def root():
     return {"message": "Hello from FastAPI!"}
 
 if __name__ == "__main__":
-    uvicorn.run("api.index:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("index:app", host="0.0.0.0", port=8000, reload=True)
