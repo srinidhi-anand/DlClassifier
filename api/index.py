@@ -128,10 +128,10 @@ app.add_middleware(
 @app.get("/root")
 async def root():
     try:
-        env = os.environ.get('VERCEL_ENV', 'preview')
+        env = os.environ.get('VERCEL_ENV')
+        # path = os.path.join(os.getcwd(), 'public', 'classes.json')
+        # if (env == 'production'):
         path = os.path.join(os.getcwd(), 'public', 'classes.json')
-        if (env == 'production'):
-            path = os.path.join(os.getcwd(), 'public', 'classes.json')
         print('process', env, path)
         classesList = []
         with open(path, 'r') as file:
