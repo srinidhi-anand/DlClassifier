@@ -128,8 +128,9 @@ app.add_middleware(
 @app.get("/root")
 async def root():
     try:
+        print('process', os.process.cwd(), os.path.join(os.process.cwd(), 'classes.json'))
         classesList = []
-        with open('../classes.json', 'r') as file:
+        with open(os.path.join(os.process.cwd(), 'classes.json'), 'r') as file:
             classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
