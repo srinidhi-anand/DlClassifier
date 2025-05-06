@@ -126,7 +126,7 @@ app.add_middleware(
 #     except HTTPException as e:
 #         raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
     
-@app.get("/")
+@app.get("/home")
 async def root():
     return {"message": "Hello from FastAPI!"}
 
