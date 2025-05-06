@@ -128,9 +128,13 @@ app.add_middleware(
 @app.get("/root")
 async def root():
     try:
-        print('process', os.getcwd(), os.path.join(os.getcwd(), 'classes.json'))
+        env = os.environ.get('VERCEL_ENV', 'preview')
+        path = os.path.join(os.getcwd(), 'static', 'classes.json')
+        if (env == 'production'):
+            path = os.path.join(os.getcwd(), 'public', 'classes.json')
+        print('process', env, path)
         classesList = []
-        with open(os.path.join(os.getcwd(), 'classes.json'), 'r') as file:
+        with open(path, 'r') as file:
             classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
