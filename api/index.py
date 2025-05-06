@@ -1,7 +1,7 @@
 
 import os
 from typing import Annotated
-
+import traceback
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 from api.schemas import FoodNote
@@ -134,8 +134,8 @@ async def root():
             classesList = json.load(file)
         print(f"classesList {classesList}")
         return {"message": "Hello from FastAPI!", "classesList": classesList}
-    except HTTPException as e: 
-        raise HTTPException(status_code = e.status_code, detail=f'error occurred {e}')
+    except Exception as e: 
+        return f'error occurred {e} {traceback.format_exc()}'
 
 if __name__ == "__main__":
     uvicorn.run("index:app", host="0.0.0.0", port=8000, reload=True)
