@@ -8,5 +8,9 @@ export default defineConfig({
   build: {
     outDir: 'build',
     emptyOutDir: true, // also necessary
-  }
+  }, 
+  server: {
+         host: '0.0.0.0',
+         port: parseInt(env.VITE_PORT) || 5173,
+       },
 })
