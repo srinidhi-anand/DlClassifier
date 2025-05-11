@@ -15,7 +15,7 @@ function Home() {
               </button>
           </div>
         </div>
-          <img src='/assets/home_image.png' className="logo" alt="App logo" />          
+          <img src='https://res.cloudinary.com/dsfayktkz/image/upload/v1746984154/home_img_zpyp5q.png' className="logo" alt="App logo" />          
       </div>
       
       <p className="read-the-docs">
