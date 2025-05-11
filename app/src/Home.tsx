@@ -15,7 +15,7 @@ function Home() {
               </button>
           </div>
         </div>
-          <img src='../home_image.jpg' className="logo" alt="App logo" />          
+          <img src='/assets/react.svg' className="logo" alt="App logo" />          
       </div>
       
       <p className="read-the-docs">
